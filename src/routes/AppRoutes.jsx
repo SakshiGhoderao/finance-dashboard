@@ -7,29 +7,22 @@ import Insights from "../pages/Insights";
 import Users from "../pages/Users";
 import Settings from "../pages/Settings";
 import Profile from "../pages/Profile";
-import ProtectedRoute from "../components/ProtectdRoute";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 export default function AppRoutes(){
     const location = useLocation();
 
     return(
         <AnimatePresence mode="wait">
-            <motion.div
-                key={location.pathname}
-                initial={{opacity:0, y:20 }}
-                animate={{opacity:1, y:0}}
-                exit={{opacity:0, y:-20}}
-                transition={{duration:0.3}}
-            >
                 <Routes location={location}>
-                    <Route path="/" element={<Dashboard />}/>
-                    <Route path="/transactions" element={<Transactions />} />
-                    <Route path="/insights" element={<Insights />} />
+                    <Route path="/" element={<PageWrapper><Dashboard /></PageWrapper>}/>
+                    <Route path="/transactions" element={<PageWrapper><Transactions /></PageWrapper>} />
+                    <Route path="/insights" element={<PageWrapper><Insights /></PageWrapper>} />
 
                     {/*admin only*/}
                     <Route path="/users" element={
                         <ProtectedRoute allowedRole="admin">
-                            <Users/>
+                            <PageWrapper><Users/></PageWrapper>
                         </ProtectedRoute>
                     }
                     />
@@ -42,7 +35,19 @@ export default function AppRoutes(){
                     {/*user only*/}
                     <Route path="/profile" element={<Profile />} />
                 </Routes>
-            </motion.div>
         </AnimatePresence>
     );
 }
+
+const PageWrapper = ({children}) => (
+     <motion.div
+        key={location.pathname}
+        initial={{opacity:0, y:20 }}
+        animate={{opacity:1, y:0}}
+        exit={{opacity:0, y:-20}}
+        transition={{duration:0.3}}
+    >
+        {children}
+    </motion.div>
+            
+)

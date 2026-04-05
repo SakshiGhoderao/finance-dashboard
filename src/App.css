@@ -151,7 +151,6 @@ body {
   border-collapse: collapse;
   overflow: hidden;
   border: 1px solid #e2e8f0;
-  min-width: 600px;
 }
 
 .transaction-table th {
@@ -300,7 +299,7 @@ body {
 /* Mobile Sidebar Logic */
 @media (max-width: 768px) {
     .app-container {
-        flex-direction: column; /
+        flex-direction: column; 
     }
 
     .sidebar {
