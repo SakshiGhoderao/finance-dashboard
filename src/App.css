@@ -1,0 +1,322 @@
+/* App.css */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ebedef;
+  color: #1e293b;
+  margin: 0;
+}
+
+.dashboard-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Sidebar Container */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background-color: #0f172a; 
+  color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  position: sticky;
+  top: 0;
+}
+
+.sidebar.admin{
+  background: linear-gradient(180deg, #1e3a8a, #020617);
+}
+
+.sidebar.user{
+  background: linear-gradient(180deg, #020c09, #0bd199);
+}
+.sidebar-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  padding: 0 1rem;
+  margin-bottom: 2.5rem;
+  color: #fff;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Sidebar Links */
+.sidebar-link {
+  text-decoration: none;
+  color: #94a3b8; 
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.sidebar-link:hover {
+  background-color: #1e293b;
+  color: #fff;
+  padding-left: 12px;
+}
+
+.sidebar-link.active {
+  background-color: #3b82f6; 
+  color: #fff;
+}
+
+.role-badge {
+  margin-top: auto;
+  padding: 1rem;
+  background: #1e293b;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.role-text {
+  display: block;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.7rem;
+  margin-bottom: 4px;
+}
+
+/* Transactions Page Styles */
+.transactions-container {
+  padding: 2rem;
+}
+
+.transaction-form {
+  display: flex;
+  gap: 12px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+.transaction-form input, .transaction-form select {
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: inherit;
+  outline: none;
+}
+
+.transaction-form input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.btn-add {
+  background: #3b82f6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Table Styles */
+.transaction-table {
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  border-collapse: collapse;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  min-width: 600px;
+}
+
+.transaction-table th {
+  background: #f8fafc;
+  padding: 14px;
+  text-align: left;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.transaction-table td {
+  padding: 14px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.95rem;
+}
+
+.type-tag {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.action-btn {
+  padding: 6px 10px;
+  margin-left: 5px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.action-btn.delete { color: #ef4444; border-color: #fee2e2; }
+.action-btn.edit { color: #3b82f6; border-color: #dbeafe; }
+
+/* Insights Page Styles */
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 20px;
+}
+
+.insight-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.insight-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.insight-icon {
+  font-size: 1.5rem;
+  background: #f1f5f9;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.role-switch-btn {
+    width: 100%;
+    padding: 10px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.role-switch-btn:hover {
+    transform: scale(1.05);
+}
+
+/* MAIN CONTENT BASE */
+.main-content {
+  flex: 1;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* ADMIN THEME */
+.main-content.admin {
+  background: linear-gradient(180deg, #ced0d6, #4c52f7);
+  color: #091a1f;
+}
+
+/* USER THEME */
+.main-content.user {
+  background: linear-gradient(180deg, #ecfdf5, #d1fae5);
+  color: #065f46;
+}
+
+/* BASE */
+.main-content {
+  flex: 1;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Admin Light */
+.main-content.admin.light {
+  background: #eff6ff;
+  color: #1e3a8a;
+}
+
+/* User Light */
+.main-content.user.light {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+/* Admin Dark */
+.main-content.admin.dark {
+  background: #0f172a;
+  color: #93c5fd;
+}
+
+/* User Dark */
+.main-content.user.dark {
+  background: #022c22;
+  color: #6ee7b7;
+}
+
+/* DARK SIDEBAR */
+.sidebar.dark.admin {
+  background: linear-gradient(180deg, #1e3a8a, #020617);
+}
+
+.sidebar.dark.user {
+  background: linear-gradient(180deg, #065f46, #022c22);
+}
+
+/* Mobile Sidebar Logic */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column; /
+    }
+
+    .sidebar {
+        width: 100% !important;
+        height: auto !important;
+        flex-direction: row !important; 
+        padding: 10px;
+        overflow-x: auto; 
+    }
+
+    .sidebar-logo {
+        display: none; 
+    }
+
+    .nav-link {
+        padding: 8px 12px !important;
+        font-size: 0.8rem;
+    }
+}
