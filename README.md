@@ -11,8 +11,5 @@
 - CSS
 - Recharts
 
-## 📸 Screenshots
-(Add images here)
-
 ## 🌐 Live Demo
-(Add Vercel link later)
+https://finance-dashboard-beige-alpha.vercel.app/
